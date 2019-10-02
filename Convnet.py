@@ -608,49 +608,49 @@ if __name__ == '__main__':
     x_test /= 255
 
     # linear model
-    # start = time.clock()
-    # model_log1 = linear_MNIST_classifier(X, Y, 60000, 1500)
-    # print('time taken for the linear model: '+str(time.clock() - start))
-    # print_measures(model_log1,['linear MNIST'])
-    # plot_loss_acc(model_log1)
+    start = time.clock()
+    model_log1 = linear_MNIST_classifier(X, Y, 60000, 1500)
+    print('time taken for the linear model: '+str(time.clock() - start))
+    print_measures(model_log1,['linear MNIST'])
+    plot_loss_acc(model_log1)
 
     # multi-layer perceptron
-    # create_cool_MLP_graphs(X, Y)
+    create_cool_MLP_graphs(X, Y)
 
     # learning_rate, decay, momentum, nesterov_bool = [0.01, 1e-6, 0.9, True]
-    # params = [learning_rate, decay, momentum, nesterov_bool]
-    # opt_type = 'sgd'
-    # loss_func = 'categorical_hinge'
-    # depth = 3
-    # activation = 'tanh'
-    # batch_size = 30000
-    # dropout = 0.5
-    # epochs = 150
-    # multi_layer_perceptron(X, Y, params, opt_type, loss_func, depth, activation, batch_size, dropout, epochs)
+    params = [learning_rate, decay, momentum, nesterov_bool]
+    opt_type = 'sgd'
+    loss_func = 'categorical_hinge'
+    depth = 3
+    activation = 'tanh'
+    batch_size = 30000
+    dropout = 0.5
+    epochs = 150
+    multi_layer_perceptron(X, Y, params, opt_type, loss_func, depth, activation, batch_size, dropout, epochs)
 
     # convnet
-    # (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    # X = {'train': x_train, 'test': x_test}
-    # Y = {'train': y_train, 'test': y_test}
-    # category_num = 10
-    # Y['train'] = keras.utils.to_categorical(y_train, category_num)
-    # Y['test'] = keras.utils.to_categorical(y_test, category_num)
+    (x_train, y_train), (x_test, y_test) = mnist.load_data()
+    X = {'train': x_train, 'test': x_test}
+    Y = {'train': y_train, 'test': y_test}
+    category_num = 10
+    Y['train'] = keras.utils.to_categorical(y_train, category_num)
+    Y['test'] = keras.utils.to_categorical(y_test, category_num)
     learning_rate, decay, momentum, nesterov_bool = [0.01, 1e-6, 0.9, True]
     params = [learning_rate, decay, momentum, nesterov_bool]
     model_params = ['sgd', 'categorical_crossentropy', 'relu', 60000, 0.25, 100]
     opt_type, loss_func, activation, batch_size, dropout, epochs = model_params
 
     # check acc and loss of convolution
-    # model_log = real_convnet(X, Y, params, opt_type, loss_func, activation, batch_size, dropout, epochs)
-    # plot_loss_acc(model_log)
-    # print_measures(model_log,['convnet'])
+    model_log = real_convnet(X, Y, params, opt_type, loss_func, activation, batch_size, dropout, epochs)
+    plot_loss_acc(model_log)
+    print_measures(model_log,['convnet'])
 
     # compare between models
     compare_linaer2MLP2conv(X, Y, model_params)
 
     # Hyper parameter
-    # variating learning rate
-    # create_cool_MLP_graphs(X, Y)
+    variating learning rate
+    create_cool_MLP_graphs(X, Y)
 
     # Autoencoder
-    # create_autoencoder()
+    create_autoencoder()
