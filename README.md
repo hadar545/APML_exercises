@@ -5,7 +5,7 @@ Code for the submitted excersies in the academic course "advanced practical cour
 Convnet Excercise: 
 
 full computation of a forward and a backward pass on a toy convolutional network.
-computation of linear, multi-layer perceptron and a convolutional network and comparing between the them in terms of prediction accuracy # and loss on the MNIST dataset. 
+computation of linear, multi-layer perceptron and a convolutional network. Comparing between the two in terms of prediction accuracy and loss on the MNIST dataset. 
 Hyper parameter optimization and comparison.
 Computation of an autoencoder using a convolutional network and comparing to PCA.
 
