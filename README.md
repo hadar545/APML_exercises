@@ -17,6 +17,7 @@ implementation of two algorithms to help find "the best K": elbow graph and silh
 implementation of tSNE algorithm and comparison to PCA.
 
 Manifold Learning Excercise:
+
 Implementation of several manifold learning algorithms such as MDS, LLE and diffusion map.
 The excercise explores the three algorithm's performance in terms of the visual manifold learned for several datasets, as well as 
 Hyper parameter learning.
